@@ -1248,7 +1248,7 @@ var DEF={readyPick:{}, msgKind:'short', home:'obour', car:0, persons:2, dayVal:0
     coffee:{on:0,preset:10,t:1,lv:1,dims:{},custom:null,quote:0,ch:{}}, kitchen:{on:0,preset:0,t:1,lv:1,dims:{},custom:null,quote:0,ch:{}}},
   quotes:null, extras:[]};
 var S=JSON.parse(JSON.stringify(DEF));
-var KEY='mizan-al-afsh-public-v1';
+var KEY='afsh-misr-v1';
 try{ var raw=localStorage.getItem(KEY); if(raw){ var o=JSON.parse(raw); if(o&&typeof o==='object'){ Object.keys(DEF).forEach(function(k){ if(o[k]!=null) S[k]=o[k]; }); Object.keys(DEF.rooms).forEach(function(r){ S.rooms[r]=Object.assign({},DEF.rooms[r],(o.rooms||{})[r]||{}); }); } } }catch(e){}
 if(!Array.isArray(S.extras)) S.extras=[]; S.extras=S.extras.filter(function(x){ return x && typeof x.n==='string'; }).slice(0,30);
 if(!S.needBy){ var d=new Date(); d.setDate(d.getDate()+84); S.needBy=d.toISOString().slice(0,10); }
